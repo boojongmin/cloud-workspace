@@ -1,9 +1,9 @@
-server:
-  port: 8888
-
-management:
-  context-path: /admin
-  
+#server:
+#  port: 8888
+#
+#management:
+#  context-path: /admin
+#  
 spring:
   cloud:
     config:

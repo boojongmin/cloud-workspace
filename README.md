@@ -3,7 +3,10 @@
 ```shell
 mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=config-server -Dversion=0.1.0-SNAPSHOT
 
+mkdir -p src/main/resources
+mkdir -p src/test/resources
 ```
+
 #### pom.xml
 
 ```xml
@@ -41,9 +44,13 @@ mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -Darche
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.cloud</groupId> -->
+<!-- 			<artifactId>spring-cloud-starter-config</artifactId> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -79,8 +86,6 @@ public class Application {
 
 ```shell
 
-mkdir -p src/main/resources
-mkdir -p src/test/resources
 
 echo ".metadata/" >> .gitignore
 echo "bin/" >> .gitignore
@@ -93,7 +98,11 @@ echo "*.class" >> .gitignore
 
 [application.yml 참조](https://github.com/spring-cloud-samples/configserver/blob/master/src/main/resources/application.yml)
 
+```shell
+mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=eureka-server -Dversion=0.1.0-SNAPSHOT
 
+```
+#
 
 
 
