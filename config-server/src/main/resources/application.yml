@@ -1,0 +1,12 @@
+server:
+  port: 8888
+
+management:
+  context-path: /admin
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/boojongmin/cloud-config

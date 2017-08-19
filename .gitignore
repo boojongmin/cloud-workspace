@@ -1,0 +1,8 @@
+.metadata/
+bin/
+target/
+*.pid
+*.log
+*.jar
+*.class
+*.out
