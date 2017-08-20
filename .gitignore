@@ -1,6 +1,9 @@
 .metadata/
 bin/
 target/
+.settings/
+.classpath
+.project
 *.pid
 *.log
 *.jar

@@ -1,22 +1,11 @@
-#cloud-workspace
-
-```shell
-mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=config-server -Dversion=0.0.1-SNAPSHOT
-
-```
-#### pom.xml
-
-```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>boojongmin.cloud</groupId>
-	<artifactId>config-server</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>config-server</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -47,6 +36,10 @@ mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -Darche
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		<dependency>
@@ -63,67 +56,6 @@ mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -Darche
 			</plugin>
 		</plugins>
 	</build>
+	<artifactId>zuul-proxy</artifactId>
+	<name>zuul-proxy</name>
 </project>
-```
-
-## src\main\javaboojongmin\Application.java
-```
-@SpringBootApplication
-@EnableDiscoveryClient
-public class Application {
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
-}
-```
-
-```shell
-
-mkdir -p src/main/resources
-mkdir -p src/test/resources
-
-echo ".metadata/" >> .gitignore
-echo "bin/" >> .gitignore
-echo "target/" >> .gitignore
-echo "*.log" >> .gitignore
-echo "*.jar" >> .gitignore
-echo "*.class" >> .gitignore
-```
-
-```shell
-mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=cloud-client -Dversion=0.0.1-SNAPSHOT
-
-```
-#
-```shell
-mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=api-service -Dversion=0.0.1-SNAPSHOT
-```
-
-
-```shell
-mvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=boojongmin.cloud -DartifactId=zuul-proxy -Dversion=0.0.1-SNAPSHOT
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
